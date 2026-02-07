@@ -1,15 +1,17 @@
 import type { Metadata } from "next";
-import  packageJson from "@/package.json"
-import { Inter } from "next/font/google";
+import localFont from "next/font/local";
 import "@/styles/globals.css";
 import { Providers } from "@/components/providers";
 import { Sidebar } from "@/components/sidebar";
 
-const inter = Inter({
-  subsets: ["latin"],
-  variable: '--font-inter'
+const inter = localFont({
+  src: "../public/fonts/inter-var.woff2",
+  variable: '--font-inter',
+  display: 'swap',
+  declarations: [
+    { prop: 'font-feature-settings', value: "cv10 on" }
+  ]
 });
-
 const SITE_NAME = "Noire"
 
 export const metadata: Metadata = {
@@ -35,7 +37,7 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <body
-        className={`antialiased`}
+        className={`${inter.className} antialiased`}
       >
         <Providers>
           <main className="flex" role="main">
