@@ -22,7 +22,7 @@ export function Sidebar() {
     <div className="sticky top-0 left-0 w-72 h-svh bg-accent/20 border-r border-border overflow-y-auto">
       <div className="">
         <div className="mb-0 flex items-center justify-between sticky top-0 p-2 pl-4 py-2 bg-background border-b border-border">
-          <h2 className="text-sm">Noire</h2>
+          <Link href="/"><h2 className="text-sm">Noire</h2></Link>
           <div className="flex items-center gap-1">
             <ThemeToggle />
           </div>

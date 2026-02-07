@@ -164,7 +164,7 @@ function ComboboxItem({
     <ComboboxPrimitive.Item
       data-slot="combobox-item"
       className={cn(
-        "relative flex w-full cursor-default select-none items-center rounded-sm py-1.5 pl-6 pr-3 text-sm outline-none",
+        "relative flex w-full cursor-default select-none items-center rounded-sm py-1.5 pl-7.5 pr-3 text-sm outline-none",
         "data-[highlighted]:before:absolute data-[highlighted]:before:inset-x-1 data-[highlighted]:before:inset-y-0 data-[highlighted]:before:-z-1 data-[highlighted]:before:rounded-sm data-[highlighted]:before:bg-accent",
         "data-[highlighted]:relative data-[highlighted]:z-0",
         "data-[disabled]:pointer-events-none data-[disabled]:opacity-50",
@@ -174,7 +174,7 @@ function ComboboxItem({
     >
       <ComboboxPrimitive.ItemIndicator
         data-slot="combobox-item-indicator"
-        className="absolute left-1.5 flex size-4 items-center justify-center"
+        className="absolute left-2.5 flex size-4 items-center justify-center"
       >
         <IconCheckmark2 className="size-3" />
       </ComboboxPrimitive.ItemIndicator>

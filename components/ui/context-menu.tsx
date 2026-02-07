@@ -47,7 +47,7 @@ function ContextMenuPopup({
     <ContextMenuPrimitive.Popup
       data-slot="context-menu-popup"
       className={cn(
-        "min-w-48 rounded-md border border-border bg-popover p-1 shadow-lg outline-none",
+        "min-w-48 rounded-lg border border-border bg-popover p-1 shadow-lg outline-none",
         "origin-[var(--transform-origin)] transition-all duration-150",
         // "data-[starting-style]:opacity-0 data-[starting-style]:scale-95",
         "data-[ending-style]:opacity-0 data-[ending-style]:scale-95",
