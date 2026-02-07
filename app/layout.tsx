@@ -3,6 +3,7 @@ import localFont from "next/font/local";
 import "@/styles/globals.css";
 import { Providers } from "@/components/providers";
 import { Sidebar } from "@/components/sidebar";
+import { MobileNav } from "@/components/mobile-nav";
 
 const inter = localFont({
   src: "../public/fonts/inter-var.woff2",
@@ -40,6 +41,7 @@ export default function RootLayout({
         className={`${inter.className} antialiased`}
       >
         <Providers>
+          <MobileNav />
           <main className="flex" role="main">
             <Sidebar />
             {children}
