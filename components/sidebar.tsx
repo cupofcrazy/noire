@@ -55,7 +55,7 @@ export function Sidebar() {
                     : "hover:bg-accent/50"
                 )}
               >
-                <demo.icon className="size-4 shrink-0" />
+                <demo.icon className="size-4 text-foreground/60 shrink-0" />
                 {demo.title}
               </Link>
             )
