@@ -1,0 +1,234 @@
+@import "tailwindcss";
+
+:root {
+  --header-height: 2.5rem;
+
+  /* fonts */
+  font-size: 13px;
+
+  /* Base colors - Light mode */
+  --background: #ffffff;
+  --foreground: #111111;
+  --card: #ffffff;
+  --card-foreground: #111111;
+  --popover: #ffffff;
+  --popover-foreground: #111111;
+  --primary: #006eff;
+  --primary-foreground: #ffffff;
+  --secondary: #f5f5f5;
+  --secondary-foreground: #111111;
+  --muted: #f5f5f5;
+  --muted-foreground: #737373;
+  --accent: #f5f5f5;
+  --accent-foreground: #111111;
+  --destructive: #FF0033;
+  --destructive-foreground: #ffffff;
+  --border: #e5e5e5;
+  --input: #f2f2f2;
+  --ring: #c6c6c6;
+  --radius: 0.65rem;
+
+  /* Status colors */
+  --success: #00FF88;
+  --success-foreground: #009952;
+  --warning: #f59e0b;
+  --warning-foreground: #bc7a00;
+  --error: #ef4444;
+  --error-foreground: #ffffff;
+  --info: #0099FF;
+  --info-foreground: #0099FF;
+
+  /* Extended palette */
+  --blue: #3b82f6;
+  --blue-foreground: #ffffff;
+  --green: #22c55e;
+  --green-foreground: #ffffff;
+  --yellow: #eab308;
+  --yellow-foreground: #111111;
+  --red: #ef4444;
+  --red-foreground: #ffffff;
+  --purple: #a855f7;
+  --purple-foreground: #ffffff;
+  --pink: #ec4899;
+  --pink-foreground: #ffffff;
+  --orange: #f97316;
+  --orange-foreground: #ffffff;
+  --indigo: #6366f1;
+  --indigo-foreground: #ffffff;
+  --cyan: #06b6d4;
+  --cyan-foreground: #ffffff;
+  --teal: #14b8a6;
+  --teal-foreground: #ffffff;
+}
+
+.dark {
+  /* Base colors - Dark mode */
+  --background: #111111;
+  --foreground: #ededed;
+  --card: #171717;
+  --card-foreground: #ededed;
+  --popover: #171717;
+  --popover-foreground: #ededed;
+  --primary: #ededed;
+  --primary-foreground: #0a0a0a;
+  --secondary: #262626;
+  --secondary-foreground: #ededed;
+  --muted: #262626;
+  --muted-foreground: #a3a3a3;
+  --accent: #262626;
+  --accent-foreground: #ededed;
+  --destructive: #dc2626;
+  --destructive-foreground: #ededed;
+  --border: #262626;
+  --input: #262626;
+  --ring: #d4d4d4;
+
+  /* Status colors - Dark mode */
+  --success: #16a34a;
+  --success-foreground: #00FF88;
+  --warning: #d97706;
+  --warning-foreground: #FFA600;
+  --error: #dc2626;
+  --error-foreground: #ededed;
+  --info: #0099FF;
+  --info-foreground: #0099FF;
+
+  /* Extended palette - Dark mode */
+  --blue: #2563eb;
+  --blue-foreground: #ededed;
+  --green: #16a34a;
+  --green-foreground: #ededed;
+  --yellow: #ca8a04;
+  --yellow-foreground: #0a0a0a;
+  --red: #dc2626;
+  --red-foreground: #ededed;
+  --purple: #9333ea;
+  --purple-foreground: #ededed;
+  --pink: #db2777;
+  --pink-foreground: #ededed;
+  --orange: #ea580c;
+  --orange-foreground: #ededed;
+  --indigo: #4f46e5;
+  --indigo-foreground: #ededed;
+  --cyan: #0891b2;
+  --cyan-foreground: #ededed;
+  --teal: #0d9488;
+  --teal-foreground: #ededed;
+}
+
+@theme inline {
+  /* Base colors */
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+
+  /* Status colors */
+  --color-success: var(--success);
+  --color-success-foreground: var(--success-foreground);
+  --color-warning: var(--warning);
+  --color-warning-foreground: var(--warning-foreground);
+  --color-error: var(--error);
+  --color-error-foreground: var(--error-foreground);
+  --color-info: var(--info);
+  --color-info-foreground: var(--info-foreground);
+
+  /* Extended palette */
+  --color-blue: var(--blue);
+  --color-blue-foreground: var(--blue-foreground);
+  --color-green: var(--green);
+  --color-green-foreground: var(--green-foreground);
+  --color-yellow: var(--yellow);
+  --color-yellow-foreground: var(--yellow-foreground);
+  --color-red: var(--red);
+  --color-red-foreground: var(--red-foreground);
+  --color-purple: var(--purple);
+  --color-purple-foreground: var(--purple-foreground);
+  --color-pink: var(--pink);
+  --color-pink-foreground: var(--pink-foreground);
+  --color-orange: var(--orange);
+  --color-orange-foreground: var(--orange-foreground);
+  --color-indigo: var(--indigo);
+  --color-indigo-foreground: var(--indigo-foreground);
+  --color-cyan: var(--cyan);
+  --color-cyan-foreground: var(--cyan-foreground);
+  --color-teal: var(--teal);
+  --color-teal-foreground: var(--teal-foreground);
+
+  /* Fonts */
+  --font-sans: Inter, 'SF Pro', 'Graphik', 'Untitled Sans', sans-serif;
+  --font-mono: 'JetBrains Mono', monospace;
+
+  /* Border radius */
+  --radius: var(--radius);
+
+  /* easing */
+  --ease-out-expo: cubic-bezier(0.19, 1, 0.22, 1);
+
+  --radius-xs: calc(var(--radius) * 0.75);
+  --radius-sm: calc(var(--radius) * 0.875);
+  --radius-md: var(--radius);
+  --radius-lg: calc(var(--radius) * 1.125);
+  --radius-xl: calc(var(--radius) * 1.25);
+  --radius-2xl: calc(var(--radius) * 1.5);
+  --radius-3xl: calc(var(--radius) * 1.75);
+  --radius-4xl: calc(var(--radius) * 2);
+  --radius-5xl: calc(var(--radius) * 2.25);
+
+}
+
+body {
+  isolation: isolate;
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-sans);
+  position: relative;
+}
+
+.root {
+  position: relative;
+  isolation: isolate;
+}
+
+/* scrollbar */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: var(--border) transparent;
+}
+
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--border);
+  border-radius: 9999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--muted-foreground);
+}
+
+::-webkit-scrollbar-corner {
+  background: transparent;
+}
