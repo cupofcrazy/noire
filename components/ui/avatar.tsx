@@ -7,7 +7,7 @@ import { cva, type VariantProps } from "cva"
 import { cn } from "@/lib/utils"
 
 const avatarVariants = cva(
-  "relative inline-flex shrink-0 items-center justify-center overflow-hidden rounded-full bg-muted",
+  "relative inline-flex shrink-0 items-center justify-center overflow-hidden bg-muted",
   {
     variants: {
       size: {
@@ -16,9 +16,18 @@ const avatarVariants = cva(
         lg: "size-11 text-base",
         xl: "size-14 text-lg",
       },
+      rounded: {
+        xs: "rounded-xs",
+        sm: "rounded-sm",
+        md: "rounded-md",
+        lg: "rounded-lg",
+        xl: "rounded-xl",
+        full: "rounded-full",
+      },
     },
     defaultVariants: {
       size: "default",
+      rounded: "full",
     },
   }
 )
@@ -26,13 +35,14 @@ const avatarVariants = cva(
 function AvatarRoot({
   className,
   size,
+  rounded,
   ...props
 }: React.ComponentProps<typeof AvatarPrimitive.Root> &
   VariantProps<typeof avatarVariants>) {
   return (
     <AvatarPrimitive.Root
       data-slot="avatar"
-      className={cn(avatarVariants({ size, className }))}
+      className={cn(avatarVariants({ size, rounded, className }))}
       {...props}
     />
   )
@@ -59,7 +69,7 @@ function AvatarFallback({
     <AvatarPrimitive.Fallback
       data-slot="avatar-fallback"
       className={cn(
-        "flex size-full items-center justify-center rounded-full bg-muted font-medium text-muted-foreground",
+        "flex size-full items-center justify-center bg-muted font-medium text-muted-foreground",
         className
       )}
       {...props}
