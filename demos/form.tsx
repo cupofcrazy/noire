@@ -16,7 +16,6 @@ export function FormDemo() {
       <Form
         className="w-80"
         errors={errors}
-        onClearErrors={setErrors}
         onSubmit={(event) => {
           event.preventDefault()
           const data = Object.fromEntries(new FormData(event.currentTarget))
