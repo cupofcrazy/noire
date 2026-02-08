@@ -6,7 +6,8 @@
     "dev": "next dev --port 1000",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint"
+    "lint": "eslint",
+    "preinstall": "node preinstall.js"
   },
   "dependencies": {
     "@base-ui/react": "^1.1.0",

@@ -41,11 +41,11 @@ export default function RootLayout({
         className={`${inter.className} antialiased`}
       >
         <Providers>
-          <MobileNav />
-          <main className="flex" role="main">
+          <main className="flex pb-16 md:pb-0" role="main">
             <Sidebar />
             {children}
           </main>
+          <MobileNav />
         </Providers>
       </body>
     </html>
