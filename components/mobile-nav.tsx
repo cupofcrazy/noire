@@ -30,7 +30,7 @@ export function MobileNav() {
   return (
     <div className="sticky top-0 z-50 flex items-center justify-between border-b border-border bg-background p-2 pl-4 md:hidden">
       <Link href="/">
-        <h2 className="text-sm font-medium">Noire</h2>
+        <h2 className="font-medium">Noire</h2>
       </Link>
       <div className="flex items-center gap-1">
         <ThemeToggle />
