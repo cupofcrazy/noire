@@ -7,7 +7,9 @@ import { Popover as PopoverPrimitive } from "@base-ui/react/popover"
 import { cn } from "@/lib/utils"
 import { ThemeToggle } from "./theme-toggle"
 import { demos } from "@/demos"
-import { IconQuickSearch, IconBarsThree, IconCrossSmall } from "central-icons"
+import { IconQuickSearch, IconBarsThree, IconCrossSmall, IconBarsTwo } from "central-icons"
+import { AnimatePresence, motion } from "motion/react"
+import { Input, InputGroup, InputIcon } from "./ui/input"
 
 export function MobileNav() {
   const pathname = usePathname()
@@ -36,17 +38,27 @@ export function MobileNav() {
           <PopoverPrimitive.Trigger
             className="inline-flex size-8 items-center justify-center rounded-md text-foreground hover:bg-accent"
           >
-            {open ? (
-              <IconCrossSmall className="size-4" />
-            ) : (
-              <IconBarsThree className="size-4" />
-            )}
+            <AnimatePresence mode="popLayout">
+              <motion.div
+                key={open ? "cross" : "bars"}
+                initial={{ opacity: 0, scale: 0.6, filter: "blur(2px)" }}
+                animate={{ opacity: 1, scale: 1, filter: "blur(0px)" }}
+                exit={{ opacity: 0, scale: 0.6, filter: "blur(2px)" }}
+                transition={{ duration: 0.15, ease: "easeInOut" }}
+                >
+              {open ? (
+                <IconCrossSmall className="size-6" />
+              ) : (
+                <IconBarsTwo className="size-5" />
+              )}
+              </motion.div>
+            </AnimatePresence>
           </PopoverPrimitive.Trigger>
           <PopoverPrimitive.Portal>
             <PopoverPrimitive.Positioner
               side="bottom"
               align="end"
-              sideOffset={8}
+              sideOffset={16}
               className="outline-none"
             >
               <PopoverPrimitive.Popup
@@ -57,16 +69,19 @@ export function MobileNav() {
                   "data-[ending-style]:opacity-0 data-[ending-style]:scale-95",
                 )}
               >
-                <div className="p-2 pb-0">
+                <div className="p-1 pb-0">
                   <div className="relative">
-                    <IconQuickSearch className="pointer-events-none absolute left-2.5 top-1/2 size-3.5 -translate-y-1/2 text-muted-foreground" />
-                    <input
-                      type="text"
-                      placeholder="Search..."
-                      value={query}
-                      onChange={(e) => setQuery(e.target.value)}
-                      className="h-8 w-full rounded-md border border-input bg-transparent pl-8 pr-2.5 text-sm placeholder:text-muted-foreground outline-none focus-visible:border-primary/70 focus-visible:ring-primary"
-                    />
+                    <InputGroup className="sticky left-0 top-0">
+                      <InputIcon><IconQuickSearch className="size-4 text-muted-foreground/60" /></InputIcon>
+                      <Input 
+                        className="rounded-xs"
+                        variant="border"
+                        type="text"
+                        placeholder="Search..."
+                        value={query}
+                        onChange={(e) => setQuery(e.target.value)}
+                      />
+                    </InputGroup>
                   </div>
                 </div>
                 <nav className="flex flex-col gap-1 p-2">
