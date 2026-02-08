@@ -1,5 +1,6 @@
 import { ThemeProvider } from "next-themes"
 import { Tooltip } from "@/components/ui/tooltip"
+import { RadiusProvider } from "@/components/radius-control"
 
 type ProvidersProps = {
   children: React.ReactNode
@@ -7,10 +8,10 @@ type ProvidersProps = {
 
 export function Providers({ children }: ProvidersProps) {
   return (
-    <>
-      <ThemeProvider attribute="class" disableTransitionOnChange>
+    <ThemeProvider attribute="class" disableTransitionOnChange>
+      <RadiusProvider>
         {children}
-      </ThemeProvider>
-    </>
+      </RadiusProvider>
+    </ThemeProvider>
   )
 }

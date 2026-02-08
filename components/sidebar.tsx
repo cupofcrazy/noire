@@ -5,6 +5,7 @@ import Link from "next/link"
 import { usePathname } from "next/navigation"
 import { cn } from "@/lib/utils"
 import { ThemeToggle } from "./theme-toggle"
+import { RadiusControl } from "./radius-control"
 import { demos } from "@/demos"
 import { IconQuickSearch } from "central-icons"
 
@@ -24,6 +25,7 @@ export function Sidebar() {
         <div className="mb-0 flex items-center justify-between sticky top-0 p-2 pl-4 py-2 bg-background border-b border-border">
           <Link href="/"><h2 className="font-medium">Noire</h2></Link>
           <div className="flex items-center gap-1">
+            <RadiusControl className="rounded-sm" />
             <ThemeToggle />
           </div>
         </div>
