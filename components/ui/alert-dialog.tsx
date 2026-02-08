@@ -54,7 +54,7 @@ function AlertDialogPopup({
       data-slot="alert-dialog-popup"
       className={cn(
         "fixed left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2",
-        "w-full max-w-md rounded-lg border border-border bg-background p-6 shadow-lg",
+        "w-[calc(100%-2rem)] max-w-md rounded-lg border border-border bg-background p-6 shadow-lg",
         "transition-all duration-150",
         "data-[starting-style]:opacity-0 data-[starting-style]:scale-95",
         "data-[ending-style]:opacity-0 data-[ending-style]:scale-95",
